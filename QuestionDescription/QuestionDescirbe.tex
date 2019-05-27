@@ -1,0 +1,98 @@
+%# -*- coding: utf-8 -*-
+%!TEX encoding = UTF-8 Unicode
+
+%% Tex template of yumaxwell, version 0.4, Nov. 15th, 2016.
+%% This is Mac chinese version template for article.
+
+%% Test environment: MacTex2011(TexLive2011, Ghostscript9.02, Image
+    %   Magick-Converter6.6.9)
+%% Using compiler:  XeLaTex
+%% For Chinese article.
+
+%% Use Mac_CHN_Header.tex
+\input{Header}
+%%******************************************************************%%
+%%                    Document header                               %%
+%%******************************************************************%%
+\begin{document}
+%% Header and footer
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{}
+\rfoot{}
+
+\title{\yh 群体运动问题}
+\author{Yumaxwell\thanks{Template version 0.3, DONOT COPY WITHOUT PERMISSION! CONTACT \underline{yuwenjun@pku.edu.cn}}}
+%\date{2012-11-21}   % comment means today
+\maketitle
+\thispagestyle{empty} % this page has no header
+%\tableofcontents        % content
+%\listoffigures         % figures content
+%\listoftables          % tables content
+
+%%******************************************************************%%
+%%******************************************************************%%
+%% Main body
+
+% Abstract of article
+%\begin{abstract}
+
+%\end{abstract}
+
+\section{背景}
+群体运动是自然界中常见的现象。对于一个群体，如鱼群、鸟群。每个个体可能仅具有比较简单的能力，但是集合在一起组成群体，能够表现出复杂的行为。
+
+\section{问题描述}
+给定一个群体，在三维空间中可以自由飞行，空间坐标采用笛卡尔坐标系$O-xyz$。群体中有$N$个独立个体，每个个体记为$N_i, i=1,2,\cdots,N$，其对应空间坐标为对于时间$t$的函数$\vec{x_i}(t) = [x_i(t),y_i(t),z_i(t)]$。
+针对给定的初始群体位置$\vec{S}_1=\{\vec{x_1},\vec{x_2},\cdots,\vec{x_N}\}$，和预定的目标位置$\vec{S}_2=\{\vec{x_1}',\vec{x_2}',\cdots,\vec{x_N}'\}$，求解每个个体的飞行路径轨迹，以及花费的总体时间。
+
+在飞行过程中，每个个体的速度和加速度\footnote[1]{或者开始阶段可以仅采用速度约束，但加速度约束最终也应增加。}在整个飞行过程中应该保持在限定范围内。
+\begin{eqnarray}
+	\vec{v_i}(t)&<& \vec{v_{\text{max}}} , \quad t\in[t_{\text{start}},t_{\text{end}}], i=1,2,\cdots,N. \label{e:alimDef} \\
+	\vec{a_i}(t)&<& \vec{a_{\text{max}}} , \quad t\in[t_{\text{start}},t_{\text{end}}], i=1,2,\cdots,N. \label{e:vlimDef}
+\end{eqnarray}
+同时，在飞行过程中，任意两个个体的需要保持安全飞行间距，
+\begin{equation}\label{e:dlimDef}
+	\forall t \in [t_{\text{start}},t_{\text{end}}], \quad \forall i,j\in \{1,2,\cdots,N\}, i\ne j, \quad |\vec{x_i}(t)-\vec{x_j}(t)| \ge d_{\text{th}}.
+\end{equation}
+
+要求实现计算程序的模块化。
+
+群体位置生成算法。
+
+个体运动模型。
+
+个体运动轨迹算法。
+
+评估飞行安全距离。
+
+图形显示。
+
+
+\section{后续问题}
+\begin{enumerate}
+	\item 有哪些飞行策略？
+	\item 如何找到时间最短的飞行策略？
+	\item 是否有应用？比如缓解交通拥堵？
+\end{enumerate}
+
+
+%% Appendix
+%\appendix{Appendix}
+
+%% Reference
+
+%\section*{References}
+%\begin{thebibliography}{}
+%	\bibitem{bib_source} Source reference.
+%    \bibitem{bib_ref} reference name.
+%\end{thebibliography}
+
+%\bibliographystyle{ieee} % still have bugs here
+%\bibliography{bibref}
+
+
+\end{document}
+%% End of article 
